@@ -2,7 +2,7 @@
 
 
 int main() {
-   int score;
+   int score, A = 0, B = 0, C = 0, D = 0, F = 0;
 	
    while(1) {
       scanf("%d",&score);
@@ -12,19 +12,33 @@ int main() {
       else if(score > 100 || score < 0) {
          printf("error score\n");
       }
-      else
-         if (score >= 68)
-            if (score >= 85)
+      else {
+         if (score >= 68) {
+            if (score >= 85) {
                printf("%d(A)\n", score);
-            else if (score >= 75)
+               A += 1;
+            }
+            else if (score >= 75) {
                printf("%d(B)\n", score);
-            else
+               B += 1;
+            }
+            else {
                printf("%d(C)\n", score);
-         else if (score >= 55)
+               C += 1;
+            }
+         }
+         else if (score >= 55) {
             printf("%d(D)\n", score);
-         else
+            D += 1;
+         }
+         else {
             printf("%d(F)\n", score);
+            F += 1;
+         }
+      }
    }
+
+   printf("A(%d)\nB(%d)\nC(%d)\nD(%d)\nF(%d)", A, B, C, D, F);
 
    return 0;
 }
